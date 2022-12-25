@@ -55,3 +55,44 @@ yarn add cross-env
 如果报错，按照指示安装 `resolve-url-loader`
 
 ``` yarn add resolve-url-loader@^5.0.0 --dev ```
+
+### 4.3. Laravel 前端工作流
+
+1. 搞清楚 Laravel 是如何利用 Sass, NPM, Yarn, Laravel Mix 来构成一套完整的前端工作流。
+
+#### SASS 语法基础
+
+1. Sass 使用 `@import` 来导入其它的样式文件。如：
+
+``` @import '~bootstrap/scss/bootstrap';  #将导入 node_modules/bootstrap/scss/bootstrap.scss 文件 ```
+
+2. Sass 还允许你在代码中加入变量，所有的变量均以 $ 开头。
+
+```
+$navbar-color: #3c3e42;    #定义了一个 $navbar-color 颜色变量
+.navbar-inverse {
+  background-color: $navbar-color;
+}
+```
+
+3. Sass 还允许你在选择器中进行相互嵌套，以减少代码量。
+
+4. 可以在 Sass 嵌套中使用 & 对父选择器进行引用
+
+#### NPM, Yarn, Laravel Mix
+
+1. 在本教程中，出于安装速度考虑，我们使用更加现代化的 Yarn 来替代 NPM 的包管理功能。然而我们仍然会使用到 NPM 的任务管理功能，如命令 `npm run watch-poll`。
+
+2. Laravel 自带 yarn.lock 文件，此文件的作用与 composer.lock 一致，是为了保证项目依赖代码版本号绝对一致而存在的。
+
+3. 我们可以在 webpack.mix.js 文件中制定一些如资源文件的编译、压缩等任务。Laravel 已默认为我们生成了 webpack.mix.js 文件，并集成了 laravel-mix 模块
+
+4. 使用 Mix 很简单，首先你需要使用以下命令安装 npm 依赖：
+
+```
+yarn install
+```
+
+安装成功后，运行以下命令即可：
+
+```npm run watch-poll```
