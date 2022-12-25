@@ -137,3 +137,17 @@ mix() 方法与 webpack.mix.js 文件里的逻辑遥相呼应。
 ```
 Route::get('/help', 'StaticPagesController@help')->name('help');  #在实际开发中养成对路由的命名是一个好习惯，可以帮助我们节省很多工作量，另外也是 Laravel 项目开发的最佳实践。
 ```
+
+### 4.7. 用户注册页面
+
+1. 注册路由时，URI `signup` 和 `/signup` 从使用上来看，并无区别，Laravel 框架兼容这两种写法。
+
+```
+Route::get('signup', 'UsersController@create')->name('signup');
+```
+
+2. 生成用户控制器
+
+```
+php artisan make:controller UsersController
+```
