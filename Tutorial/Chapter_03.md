@@ -128,3 +128,13 @@ php artisan make:controller StaticPagesController
 ```
 php artisan help migrate
 ```
+
+### 3.7. 小结
+
+经过本章节的学习，我们学到了以下内容：
+
+1. 对新建的 Laravel 项目进行基本配置；
+2. 手动创建静态视图、控制器；
+3. 了解控制器与视图的基本协作流程；
+4. 了解如何使用通用视图；
+5. 了解 Artisan 命令的基本使用；
