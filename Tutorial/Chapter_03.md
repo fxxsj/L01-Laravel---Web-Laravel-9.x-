@@ -116,3 +116,15 @@ php artisan make:controller StaticPagesController
 2.3 `@yield` 区块,两个参数，第一个参数是该区块的变量名称，第二个参数是默认值.
 
 2.4 当 `@section` 传递了第二个参数时，便不需要再通过 `@stop` 标识来告诉 Laravel 填充区块会在具体哪个位置结束。
+
+### 3.6. Artisan 命令
+
+1. Artisan 是 Laravel 提供的 CLI（命令行接口）
+
+2. 使用 `php artisan list` 来查看所有可用的 Artisan 命令.
+
+3. 使用 `help` 来查看各个 Artisan 命令的帮助界面
+
+```
+php artisan help migrate
+```
