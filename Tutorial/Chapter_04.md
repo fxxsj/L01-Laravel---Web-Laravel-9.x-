@@ -151,3 +151,23 @@ Route::get('signup', 'UsersController@create')->name('signup');
 ```
 php artisan make:controller UsersController
 ```
+
+### 4.8. 小结
+
+存在冲突时，执行 `clean` 命令，放弃所有文件修改：
+
+```
+git clean -df  #以上命令会删除本地所有修改，包括文件和目录，日常开发时请慎用。
+```
+
+经过本章节的学习，我们学到了以下内容：
+
+1. Bootstrap 前端框架的基本介绍与使用；  
+
+2. Laravel Mix 前端工作流；  
+
+3. Sass 语法的基本使用；
+
+4. 局部视图的定义和引用；
+
+5. 命名路由的使用；
