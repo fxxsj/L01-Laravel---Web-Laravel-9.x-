@@ -96,3 +96,26 @@ yarn install
 安装成功后，运行以下命令即可：
 
 ```npm run watch-poll```
+
+### 4.4. 浏览器缓存问题
+
+1. 现代化的浏览器，会对静态文件进行缓存，静态文件在本课程的范畴内，指的是 .css 、.js 后缀的文件。
+
+2. 针对浏览器缓存问题，Laravel Mix 给出的方案是为每一次的文件修改做哈希处理。需要对 webpack.mix.js 稍作修改：
+
+```
+const mix = require('laravel-mix');
+
+mix.js('resources/js/app.js', 'public/js')  
+
+   .sass('resources/sass/app.scss', 'public/css').version();
+
+```
+
+修改模板，使其动态加载样式代码：
+
+```
+<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+```
+
+mix() 方法与 webpack.mix.js 文件里的逻辑遥相呼应。
