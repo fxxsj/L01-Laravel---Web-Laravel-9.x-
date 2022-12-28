@@ -9,3 +9,9 @@
 3. 用到数据模型 - Model，利用 Laravel 提供的 Eloquent ORM 跟数据库进行交互，实现用户数据的增删改查操作。
 
 4. Active Record 是一种领域模型模式，该模式由 Martin Fowler 在 2003 年出版的《企业应用架构模式》一书中进行了详细叙述并命名。其特点是一个模型类对应关系型数据库中的一个表，模型类的一个实例对应表中的一行记录。Active Record 最大优点是允许我们简单，直观地操作数据层。
+
+###　5.2. 数据库迁移
+
+1. 所有创建的迁移文件都被统一放在 database/migrations 文件夹里。
+
+2. 若要了解更多 $table 的可用方法，可查阅 [官方文档](https://learnku.com/docs/laravel/9.x/migrations#creating-tables)
