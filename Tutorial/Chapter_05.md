@@ -34,3 +34,28 @@ php artisan migrate
 php artisan migrate:rollback
 ```
 
+### 5.4. 模型文件
+
+1. Laravel 默认为我们生成的用户模型中包含了不少代码，我们主要将精力放在用户模型中定义的三个属性 `$casts`, `$fillable`, `$hidden` 上。`$casts` 属性是用来指定数据库字段使用的数据类型，`fillable` 在过滤用户提交的字段，只有包含在该属性中的字段才能够被正常更新;当我们需要对用户密码或其它敏感信息在用户实例通过数组或 JSON 显示时进行隐藏，则可使用 `hidden` 属性.
+
+2. 一般情况下，如果我们要自己手动创建一个模型文件，最简单的方式是通过 `make:model` 来创建。需要注意的一点是，模型类名称使用 单数 形式来命名：
+
+```
+php artisan make:model Article
+```
+
+3. 如果需要在创建模型的同时顺便创建数据库迁移，则可以使用 `--migration` 或 `-m` 选项
+
+```
+php artisan make:model Article -m
+```
+
+4. 在Eloquent 数据模型中，Eloquent Article 模型默认情况下会使用类的「下划线命名法」与「复数形式名称」来作为数据表的名称生成规则。
+
+5.  Eloquent 将会假设 Article 模型被存储记录在 articles 数据表中。如果你需要指定自己的数据表，则可以通过 table 属性来定义，如：
+
+```
+protected $table = 'my_articles';
+```
+
+6. 『约定优于配置』（convention over configuration），也称作按约定编程，这是一种软件设计范式，旨在减少软件开发人员需做决定的数量，获得简单的好处，而又不失灵活性。
