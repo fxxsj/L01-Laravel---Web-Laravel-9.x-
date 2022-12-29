@@ -15,3 +15,22 @@
 1. 所有创建的迁移文件都被统一放在 database/migrations 文件夹里。
 
 2. 若要了解更多 $table 的可用方法，可查阅 [官方文档](https://learnku.com/docs/laravel/9.x/migrations#creating-tables)
+
+### 5.3. 查看数据库表
+
+1. 在 Mac 上，我们可以通过安装 `Sequel Ace` 来进行数据库的一些操作，如查阅数据或删除数据。
+
+2. 如果你是使用 Windows 机器进行开发，推荐使用 `HeidiSQL` 。连接信息从上面读取。
+
+3. 运行下面的命令来生成执行迁移，migrate 命令会执行所有未被执行过的迁移
+
+```
+php artisan migrate
+```
+
+4. 在日常开发中，我们有时候也需要通过下面的方式来回滚到最近一次执行的迁移。回滚执行成功后，两个表都将被删除。
+
+```
+php artisan migrate:rollback
+```
+
