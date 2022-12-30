@@ -75,3 +75,29 @@ php artisan tinker
 ```
 App\Models\User::create(['name'=> 'Garhing', 'email'=>'i@fxxsj.xyz','password'=>bcrypt('password')])
 ```
+
+### 5.6. 查找用户对象
+
+1. 我们使用 use 来引用 App\Models\User Eloquent 模型类,在后面的操作中直接调用 User 而不是完整的类名 App\Models\User。
+
+```
+use App\Models\User
+```
+
+2. 使用 Eloquent 模型，能让我们更加轻松的与数据库进行交互。当我们要查找一个 id 为 1 的用户时，可以使用下面这种方法：
+
+```
+User::find(1)   #如果你想在查询用户不存在时触发报错的话，可使用 findOrFail
+```
+
+3. 如果要查找用户表中的首个用户，可以使用 first 方法：
+
+```
+User::first()
+```
+
+4. 我们还可以用 all 方法取出所有的用户数据：
+
+```
+User::all()
+```
