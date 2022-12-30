@@ -59,3 +59,19 @@ protected $table = 'my_articles';
 ```
 
 6. 『约定优于配置』（convention over configuration），也称作按约定编程，这是一种软件设计范式，旨在减少软件开发人员需做决定的数量，获得简单的好处，而又不失灵活性。
+
+###　5.5. 创建用户对象
+
+1. Tinker 是一个 REPL (read-eval-print-loop)，REPL 指的是一个简单的、可交互式的编程环境，通过执行用户输入的命令，并将执行结果直接打印到命令行界面上来完成整个操作。
+
+2. 我们使用以下命令进入 Tinker 环境
+
+```
+php artisan tinker
+```
+
+3. 通过下面命令我们可以很轻松的创建一个用户对象：
+
+```
+App\Models\User::create(['name'=> 'Garhing', 'email'=>'i@fxxsj.xyz','password'=>bcrypt('password')])
+```
